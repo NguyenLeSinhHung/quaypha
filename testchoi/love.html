@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>I Love You ❤️</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .message {
+      text-align: center;
+      color: #fff;
+      font-size: 30px;
+      font-weight: bold;
+      animation: fadeIn 2s ease-in-out;
+    }
+    .heart {
+      font-size: 80px;
+      animation: heartbeat 1s infinite;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.3); }
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    <div class="heart">❤️</div>
+    <p>Tớ biết mà,yêu bạn lắm 😘</p>
+  </div>
+</body>
+</html>

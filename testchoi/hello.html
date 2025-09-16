@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tiến Thoái Lưỡng Nan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: #fff;
+      border-radius: 10px;
+      width: 500px;
+      text-align: center;
+      padding: 20px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+    }
+    .title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #e74c3c;
+      margin-bottom: 15px;
+    }
+    .image-box {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto 15px;
+      background: #f4f4f4;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #aaa;
+      font-style: italic;
+    }
+    .question {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    .btn {
+      padding: 12px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: #fff;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+    .btn-red {
+      background: #e74c3c;
+    }
+    .btn-blue {
+      background: #3498db;
+    }
+    .btn:hover {
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title">Trả lời thật lòng =))</div>
+    <div class="image-box">Mascot</div>
+    <div class="question">Bạn mua cho tui iphone 17 Pro nhá</div>
+    <div class="buttons">
+      <button id="btnYes" class="btn btn-red">Mua mà</button>
+      <button id="btnSerious" class="btn btn-blue">Bạn nghiêm túc chứ...</button>
+    </div>
+  </div>
+
+  <script>
+    const btnYes = document.getElementById("btnYes");
+    const btnSerious = document.getElementById("btnSerious");
+
+    let scaleYes = 1;
+    let scaleSerious = 1;
+    let intervalId;
+
+    // Khi nhấn "Có" thì chuyển sang trang khác
+    btnYes.addEventListener("click", () => {
+      window.location.href = "love.html"; // đổi "love.html" thành trang bạn muốn
+    });
+
+    // Khi nhấn "Bạn nghiêm túc chứ..."
+    btnSerious.addEventListener("click", () => {
+      clearInterval(intervalId);
+      intervalId = setInterval(() => {
+        scaleYes += 0.05;
+        scaleSerious -= 0.03;
+        if (scaleSerious < 0.2) scaleSerious = 0.2;
+
+        btnYes.style.transform = `scale(${scaleYes})`;
+        btnSerious.style.transform = `scale(${scaleSerious})`;
+      }, 200);
+    });
+  </script>
+</body>
+</html>
